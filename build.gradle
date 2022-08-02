@@ -1,0 +1,53 @@
+plugins {
+	id 'org.springframework.boot' version '2.7.1'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'es.mikostrategy'
+version = '1.0.0'
+sourceCompatibility = '17'
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+	
+    all {
+          exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	// Spring Boot Starter
+	implementation 'org.springframework.boot:spring-boot-starter'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	//LOG4J
+	implementation 'org.springframework.boot:spring-boot-starter-log4j2'
+
+    // H2
+	runtimeOnly 'com.h2database:h2'
+
+	// Lombok
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+	
+    // Use JUnit Jupiter for testing.
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.7.2'
+
+    // Google Guava
+    implementation('com.google.guava:guava:30.1.1-jre')
+
+	//LOG4J
+    //implementation('org.apache.logging.log4j:log4j-core:2.18.0')
+    //implementation('org.apache.logging.log4j:log4j-api:2.18.0')
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
