@@ -6,7 +6,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 
-
 public record PrinterRecord<T> (T text) {
 
     private static final Logger LOGGER = LogManager.getLogger(PrinterRecord.class);
