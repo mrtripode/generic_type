@@ -11,7 +11,7 @@ public interface PrinterConsumer<T> extends Consumer<T> {
 
     final Logger logger = LogManager.getLogger(PrinterConsumer.class);
 
-    public static <T> PrinterConsumer<T> print() {
+    public static PrinterConsumer print() {
         return value -> {
             var messageFormat = format("{0}", value);
             logger.info(messageFormat);

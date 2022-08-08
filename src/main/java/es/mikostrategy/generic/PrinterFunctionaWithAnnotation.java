@@ -8,7 +8,7 @@ public interface PrinterFunctionaWithAnnotation<T>  {
     
     final Logger logger = LogManager.getLogger(PrinterFunctionaWithAnnotation.class);
 
-    public static <T> PrinterFunctionaWithAnnotation<T> print() {
+    public static PrinterFunctionaWithAnnotation print() {
         return value -> {
             logger.info(value);
             return value;

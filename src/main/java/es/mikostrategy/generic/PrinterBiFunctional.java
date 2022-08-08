@@ -11,11 +11,11 @@ public interface PrinterBiFunctional<T, V, R> extends BiFunction<T, V, R> {
 
     final Logger logger = LogManager.getLogger(PrinterBiFunctional.class);
 
-    public static<T, V, R> PrinterBiFunctional<T, V, R> print() {
+    public static PrinterBiFunctional print() {
         return (value, line) -> {
             var messageFormat = format("{0}, {1}", value, line);
             logger.info(messageFormat);
-            return null;
+            return value;
         };
     } 
 
