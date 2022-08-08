@@ -9,7 +9,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@SuppressWarnings("unchecked")
 public class GenericApplication {
 
 	private static final Logger logger = LogManager.getLogger(GenericApplication.class);
@@ -24,7 +23,7 @@ public class GenericApplication {
 		final BigDecimal bd = BigDecimal.valueOf(1225.67);
 		final String str = "String value";
 
-		logger.debug(">> Print with generic Printer without type dependency");
+		logger.info(">> Print with generic Printer without type dependency");
 		getPrinter(str);
 
 		logger.info(">> Class declare as record");

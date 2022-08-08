@@ -11,11 +11,11 @@ public interface PrinterFunctional<T, R> extends Function<T, R> {
 
     final Logger logger = LogManager.getLogger(PrinterFunctional.class);
 
-    public static PrinterFunctional print() {
+    public static <T, R> PrinterFunctional<T, R> print() {
         return value -> {
             var messageFormat = format("{0}", value);
             logger.info(messageFormat);
-            return value;
+            return null;
         };
     }
 
