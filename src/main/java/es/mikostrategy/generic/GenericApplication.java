@@ -9,7 +9,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@SuppressWarnings("unchecked")
 public class GenericApplication {
 
 	private static final Logger logger = LogManager.getLogger(GenericApplication.class);
