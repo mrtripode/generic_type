@@ -1,13 +1,20 @@
 package es.mikostrategy.generic;
 
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
-class GenericApplicationTests {
+@SpringBootTest(classes = GenericApplication.class)
+public class GenericApplicationTests {
+
+	@Autowired
+	private GenericApplication genericApplication;
 
 	@Test
-	void contextLoads() {
+	void applicationContextLoads() {
+		assertNotNull(genericApplication);
 	}
 
 }
